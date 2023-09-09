@@ -1,4 +1,6 @@
 ---
+import Header from '../components/structure/Header.astro';
+
 interface Props {
 	title: string;
 }
@@ -16,7 +18,17 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="pt-[80px]">
+		<Header />
 		<slot />
 	</body>
 </html>
+
+<style>
+	@font-face {
+		font-family: 'Montserrat';
+		src: url('/fonts/Montserrat.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal; 
+	}
+</style>
