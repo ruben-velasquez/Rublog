@@ -1,9 +1,10 @@
 ---
 import Button from "../buttons/Button.astro";
+import Post from "../cards/Post.astro";
 ---
 
 <section
-  class="py-[20px] px-3 md:px-[50px] lg:px-[100px] min-h-[400px] bg-medium-gray flex flex-col-reverse lg:flex-row gap-x-8 justify-between items-center"
+  class="py-[20px] px-3 md:px-[50px] lg:px-[100px] min-h-[400px] bg-medium-gray flex flex-col-reverse lg:flex-row gap-x-8 justify-center items-center"
 >
   <div class="flex flex-col gap-3 w-fit lg:max-w-md">
     <h1 class="font-montserrat text-6xl text-white font-bold">
@@ -17,5 +18,12 @@ import Button from "../buttons/Button.astro";
       <Button>Botón</Button>
     </div>
   </div>
-  <div class="max-w-full w-[400px] h-[250px] bg-red-300"></div>
+  <div class="flex flex-col gap-3 w-fit lg:max-w-md">
+    <h2 class="font-montserrat text-3xl text-slate-200">More recent post</h2>
+    <Post
+      title="A Interesting Post"
+      description="This post is an example of how the post description should be"
+      id="1"
+    />
+  </div>
 </section>

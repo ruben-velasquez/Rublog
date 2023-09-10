@@ -5,7 +5,9 @@ interface Props {
     id:string,
 }
 
-const { title, description, id } = Astro.params;
+const { title, description, id } = Astro.props;
+
+console.log(title);
 
 ---
 
