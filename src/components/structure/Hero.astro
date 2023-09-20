@@ -33,6 +33,7 @@ const recentPost = PostsList.sort((a, b) => b.createdAt.getTime() - a.createdAt.
       title={recentPost.title}
       description={recentPost.description}
       href={recentPost.href}
+      createdAt={recentPost.createdAt}
     />
   </div>
 </section>

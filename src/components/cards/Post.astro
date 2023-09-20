@@ -3,16 +3,29 @@ interface Props {
     title:string,
     description:string,
     href:string,
+    createdAt: Date,
 }
 
-const { title, description, href } = Astro.props;
+const { title, description, href, createdAt } = Astro.props;
 
 ---
 
 <a
   href={href}
-  class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 transition-all hover:scale-110 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+  class="block sm:w-max md:w-[300px] p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 transition-all hover:scale-110 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 >
+  <div class="flex justify-left items-center gap-1 text-gray-500">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+      <path d="M16 3v4"></path>
+      <path d="M8 3v4"></path>
+      <path d="M4 11h16"></path>
+      <path d="M11 15h1"></path>
+      <path d="M12 15v3"></path>
+   </svg>
+   <p class="text-sm">{createdAt.toLocaleDateString()}</p>
+  </div>
   <h5
     class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
   >
