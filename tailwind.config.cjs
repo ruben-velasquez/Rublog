@@ -12,6 +12,9 @@ module.exports = {
 				'light-gray': '#D8D9DA',
 				'light-yellow': '#FFF6E0',
 			},
+			backgroundImage: {
+				'medium-gray-noise': "url('/images/medium-gray-noise.png')",
+			}
 		},
 	},
 	plugins: [],
