@@ -1,0 +1,18 @@
+---
+interface Props {
+    href:string,
+};
+
+const { href } = Astro.props
+---
+<a href={href} class="w-fit p-[20px] rounded-xl bg-transparent border-dark-gray border">
+    <button class="flex justify-center items-center gap-4">
+        <div class="flex flex-col gap-2 text-left">
+            <slot />
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M9 6l6 6l-6 6"></path>
+         </svg>
+    </button>
+</a>

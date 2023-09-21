@@ -1,0 +1,33 @@
+---
+import Layout from "./Layout.astro";
+import PostList from "../utils/posts";
+import Post from "../components/cards/Post.astro";
+
+interface Props {
+	title: string;
+    postId: number
+}
+
+const { title, postId } = Astro.props;
+
+const filteredPostList = PostList.filter(post => post.id !== postId).slice(0, 3);
+
+---
+<Layout title={title}>
+    <main class="flex">
+        <slot />
+        <aside class="hidden gap-4 px-[30px] py-[50px] md:flex md:flex-col md:w-[30%] bg-light-yellow">
+            <h2 class="text-gray-800 text-3xl font-bold font-montserrat">Another Posts</h2>
+            <summary class="grid gap-4">
+                {filteredPostList.map(post => 
+                  <Post
+                    title={post.title}
+                    description={post.description}
+                    href={post.href}
+                    createdAt={post.createdAt}
+                  />
+                )}
+              </summary>
+        </aside>
+    </main>
+</Layout>
