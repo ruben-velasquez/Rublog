@@ -10,7 +10,7 @@ const Post = PostsList.find(post => post.id == postId);
 const NextPost = PostsList.find(post => post.id == postId + 1);
 ---
 <PostLayout title={Post?.title || ""} postId={postId}>
-    <article class="min-h-[calc(100vh-80px)] flex flex-col gap-3 w-[70%] py-[50px] md:px-[10vw] bg-light-gray">
+    <article class="min-h-[calc(100vh-80px)] flex flex-col gap-3 w-full md:w-[70%] py-[50px] px-3 md:px-[10vw] bg-light-gray">
         <div class="flex justify-between items-center">
             <h1 class="text-3xl font-bold font-montserrat">My third post</h1>
             <div class="flex justify-center items-center gap-1 text-gray-500">
@@ -38,7 +38,7 @@ const NextPost = PostsList.find(post => post.id == postId + 1);
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsum, sit unde assumenda laudantium nostrum ullam odio architecto, nesciunt corporis atque ut quos amet voluptates reiciendis soluta placeat. Rem, tenetur.
         </p>
 
-        <div class="flex gap-2">
+        <div class="flex flex-col items-center md:items-left md:flex-row gap-2">
             <BackButton href="/">
                 <h3 class="text-xl">Back to the home</h3>
                 <p class="text-base">View all the posts and chill out</p>
