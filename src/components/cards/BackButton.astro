@@ -5,12 +5,12 @@ interface Props {
 
 const { href } = Astro.props
 ---
-<a href={href} class="w-fit p-[20px] rounded-xl bg-transparent border-dark-gray border">
+<a  href={href} class="group transition-all w-fit p-[20px] rounded-xl bg-transparent hover:bg-dark-gray border-dark-gray border">
     <button class="flex justify-center items-center gap-4">
-        <div class="flex flex-col gap-2 text-left">
+        <div class="flex flex-col gap-2 text-left text-gray-700 group-hover:text-gray-100">
             <slot />
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left stroke-current text-gray-700 group-hover:text-gray-100" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M15 6l-6 6l6 6"></path>
         </svg>
