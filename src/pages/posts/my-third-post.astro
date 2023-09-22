@@ -1,0 +1,51 @@
+---
+import PostLayout from "../../layouts/PostLayout.astro";
+import PostsList from "../../utils/posts";
+import NextButton from "../../components/cards/NextButton.astro"
+import BackButton from "../../components/cards/BackButton.astro"
+
+const postId:number = 3;
+
+const Post = PostsList.find(post => post.id == postId);
+---
+<PostLayout title={Post?.title || ""} postId={postId}>
+    <article class="min-h-[calc(100vh-80px)] flex flex-col gap-3 w-[70%] py-[50px] md:px-[10vw] bg-light-gray">
+        <div class="flex justify-between items-center">
+            <h1 class="text-3xl font-bold font-montserrat">My third post</h1>
+            <div class="flex justify-center items-center gap-1 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+                    <path d="M16 3v4"></path>
+                    <path d="M8 3v4"></path>
+                    <path d="M4 11h16"></path>
+                    <path d="M11 15h1"></path>
+                    <path d="M12 15v3"></path>
+                 </svg>
+                 <p class="text-sm">{Post?.createdAt.toLocaleDateString()}</p>
+            </div>
+        </div>
+
+        <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsum, sit unde assumenda laudantium nostrum ullam odio architecto, nesciunt corporis atque ut quos amet voluptates reiciendis soluta placeat. Rem, tenetur.
+        </p>
+        <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsum, sit unde assumenda laudantium nostrum ullam odio architecto, nesciunt corporis atque ut quos amet voluptates reiciendis soluta placeat. Rem, tenetur.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsum, sit unde assumenda laudantium nostrum ullam odio architecto, nesciunt corporis atque ut quos amet voluptates reiciendis soluta placeat. Rem, tenetur.
+        </p>
+        <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsum, sit unde assumenda laudantium nostrum ullam odio architecto, nesciunt corporis atque ut quos amet voluptates reiciendis soluta placeat. Rem, tenetur.
+        </p>
+
+        <div class="flex gap-2">
+            <BackButton href="/">
+                <h3 class="text-xl">Back to the home</h3>
+                <p class="text-base">View all the posts and chill out</p>
+            </BackButton>
+            <NextButton href="#">
+                <h3 class="text-xl">View more posts</h3>
+                <p class="text-base">Learn more about the things i do</p>
+            </NextButton>
+        </div>
+    </article>
+</PostLayout>
