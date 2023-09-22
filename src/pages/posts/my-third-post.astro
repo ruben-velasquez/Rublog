@@ -7,6 +7,7 @@ import BackButton from "../../components/cards/BackButton.astro"
 const postId:number = 3;
 
 const Post = PostsList.find(post => post.id == postId);
+const NextPost = PostsList.find(post => post.id == postId + 1);
 ---
 <PostLayout title={Post?.title || ""} postId={postId}>
     <article class="min-h-[calc(100vh-80px)] flex flex-col gap-3 w-[70%] py-[50px] md:px-[10vw] bg-light-gray">
@@ -42,7 +43,7 @@ const Post = PostsList.find(post => post.id == postId);
                 <h3 class="text-xl">Back to the home</h3>
                 <p class="text-base">View all the posts and chill out</p>
             </BackButton>
-            <NextButton href="#">
+            <NextButton href={NextPost?.href || "/"}>
                 <h3 class="text-xl">View more posts</h3>
                 <p class="text-base">Learn more about the things i do</p>
             </NextButton>
